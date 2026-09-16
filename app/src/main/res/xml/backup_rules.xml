@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    A Tiempo — Backup Rules (API < 31)
+    All user data is local-first. We exclude the database and preferences
+    from auto-backup to keep data private and avoid unexpected restores.
+-->
+<full-backup-content>
+    <!-- Exclude Room database -->
+    <exclude domain="database" path="atiempo_database"/>
+    <exclude domain="database" path="atiempo_database-shm"/>
+    <exclude domain="database" path="atiempo_database-wal"/>
+    <!-- Exclude all shared preferences -->
+    <exclude domain="sharedpref" path="."/>
+</full-backup-content>
